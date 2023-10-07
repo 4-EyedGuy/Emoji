@@ -1,2 +1,26 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+i=0
+emojis="😆😁🔥😝😆😁🔥😝😎😎🔥😎🔥"
+arralreadycounted=[]
+while i < len(emojis):
+    curr=emojis[i]
+    if curr not in arralreadycounted:
+        arralreadycounted.append(curr)
+        counter=0
+        for s in emojis:
+            if s==curr: 
+                counter+=1
+        print(f"emoji {curr} найдено в строке {counter} раз")        
+    i+=1 
+
+smiled_str = "😆😁🔥😝😆😁🔥😝😎😎🔥😎🔥"
+smile_dict = {}
+
+for smile in smiled_str:
+    if smile not in smile_dict:
+        smile_dict[smile] = 1
+    else:
+        smile_dict[smile] += 1
+
+print('Number of each emoji dict:')
+for key, value in smile_dict.items():
+    print(f'{key} - {value}')
